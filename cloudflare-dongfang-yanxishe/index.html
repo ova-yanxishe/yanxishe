@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f2e8d7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="东方颜习社" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>东方颜习社｜八字画像</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./enso_circle_print_thin.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <button id="langToggle" class="lang-toggle" type="button">EN</button>
+      <div class="brand-mark">
+        <img src="./enso_circle_print_thin.png" alt="" />
+      </div>
+      <div class="hero-copy">
+        <p class="brand-title">東方顏習社</p>
+        <p class="brand-subline">五行氣質 ・ 舒展駐顏 ・ 形體養修</p>
+        <p class="eyebrow">ORIENTAL VITAL AESTHETICS</p>
+        <p class="portrait-line" data-i18n="heroTitle">八字画像</p>
+        <p class="lead" data-i18n="heroLead">输入生辰，先看见自己。这里会从八字排盘、五行气质、体质倾向、面部气韵与日常养修方向，生成一份容易读懂的东方画像。这不是给你贴标签，而是陪你多了解自己一点。</p>
+        <a class="hero-cta" href="#reportForm" data-i18n="heroCta">输入资料，生成免费画像</a>
+      </div>
+      <div class="price">
+        <span data-i18n="priceLabel">基础排盘</span>
+        <strong data-i18n="priceFree">免费</strong>
+        <em data-i18n="priceSub">先看一份自己的气质轮廓</em>
+      </div>
+    </section>
+
+    <section class="notice" data-i18n="notice">
+      本页用于传统文化兴趣测试和生活方式参考，不提供医疗诊断、疾病预测、治疗承诺或容貌评价。如有身体不适，请优先咨询正规医疗机构。
+    </section>
+
+    <section class="panel daily-panel" aria-labelledby="dailyTitle">
+      <div class="daily-head">
+        <div>
+          <span class="daily-seal" data-i18n="dailySeal">今日小课</span>
+          <h2 id="dailyTitle" data-i18n="dailyTitle">每日一卦与今日气象</h2>
+          <p data-i18n="dailyLead">每天用一分钟，看看今日宜忌、穿搭色与一个可执行的小行动。它不是预测命运，而是帮你把注意力收回来。</p>
+        </div>
+        <time id="dailyDate"></time>
+      </div>
+
+      <div class="daily-poem">
+        <span data-i18n="poemLabel">今日文句</span>
+        <p id="dailyPoem"></p>
+      </div>
+
+      <div class="daily-grid">
+        <article class="daily-card hexagram-card">
+          <span data-i18n="dailyHexLabel">今日卦象</span>
+          <div class="hexagram-display">
+            <i id="dailyHexSymbol">䷁</i>
+            <strong id="dailyHexagram">--</strong>
+          </div>
+          <p id="dailyHexText"></p>
+        </article>
+        <article class="daily-card">
+          <span data-i18n="dailyAlmanacLabel">黄历参考</span>
+          <div class="almanac-list">
+            <p><b data-i18n="dailyDayPillar">日柱</b><em id="dailyDayPillarText"></em></p>
+            <p><b data-i18n="dailyYi">宜</b><em id="dailyYiText"></em></p>
+            <p><b data-i18n="dailyJi">忌</b><em id="dailyJiText"></em></p>
+            <p><b data-i18n="dailySolarTerm">节气</b><em id="dailySolarTermText"></em></p>
+          </div>
+        </article>
+        <article class="daily-card">
+          <span data-i18n="dailyColorLabel">今日穿搭色</span>
+          <div id="dailyColors" class="daily-colors"></div>
+          <p id="dailyColorText"></p>
+        </article>
+      </div>
+
+      <div class="daily-retention-grid">
+        <article class="ritual-card">
+          <span data-i18n="ritualLabel">今日旺自己</span>
+          <h3 id="dailyRitualTitle"></h3>
+          <p id="dailyRitualText"></p>
+          <small id="dailyRitualTip"></small>
+        </article>
+        <article class="study-card screenshot-card">
+          <span data-i18n="studyCardLabel">五行气质学习卡</span>
+          <div class="study-card-head">
+            <i id="studyCardElement"></i>
+            <div>
+              <h3 id="studyCardTitle"></h3>
+              <p id="studyCardText"></p>
+            </div>
+          </div>
+          <ul id="studyCardList"></ul>
+          <em data-i18n="studyCardHint">适合截图保存，作为今日气质提醒。</em>
+        </article>
+        <article class="daily-test-card">
+          <span data-i18n="testLabel">今日小测试</span>
+          <h3 data-i18n="testTitle">你今天更想要哪种状态？</h3>
+          <div class="daily-test-options">
+            <button type="button" data-test="steady" data-i18n="testSteady">稳一点</button>
+            <button type="button" data-test="bright" data-i18n="testBright">亮一点</button>
+            <button type="button" data-test="soft" data-i18n="testSoft">松一点</button>
+          </div>
+          <p id="dailyTestResult"></p>
+        </article>
+      </div>
+
+      <article class="daily-article-card">
+        <div>
+          <span data-i18n="articleLabel">今日养修短文</span>
+          <em data-i18n="articleMeta">每日自动更新，只留今日一篇。</em>
+        </div>
+        <h3 id="dailyArticleTitle"></h3>
+        <p id="dailyArticleText"></p>
+        <blockquote id="dailyArticleQuote"></blockquote>
+        <p class="soft-consult-cta" id="dailyArticleCta"></p>
+      </article>
+
+      <div class="oracle-box">
+        <label>
+          <span data-i18n="oracleQuestionLabel">今天想问什么？</span>
+          <select id="oracleTopic">
+            <option value="wealth" data-i18n="oracleWealth">财运与变现</option>
+            <option value="career" data-i18n="oracleCareer">事业与工作</option>
+            <option value="love" data-i18n="oracleLove">感情与关系</option>
+            <option value="beauty" data-i18n="oracleBeauty">气色与形象</option>
+            <option value="calm" data-i18n="oracleCalm">心态与选择</option>
+          </select>
+        </label>
+        <button id="oracleBtn" type="button" data-i18n="oracleBtn">抽取今日提示</button>
+        <p id="oracleResult" class="oracle-result" aria-live="polite"></p>
+      </div>
+
+      <div class="almanac-query">
+        <div class="query-copy">
+          <span class="daily-seal" data-i18n="querySeal">日课日历</span>
+          <h3 data-i18n="queryTitle">查询过去与未来的日子</h3>
+          <p data-i18n="queryLead">输入或选择日期，查看当日的日柱、节气、十二值日与吉平慎分类。结果用于生活节律参考，不替代个人择日。</p>
+        </div>
+        <div class="query-form">
+          <label>
+            <span data-i18n="queryDateLabel">查询日期</span>
+            <div class="input-with-action query-date-control">
+              <div class="date-parts query-date-parts" aria-label="查询日期">
+                <input id="queryYear" type="text" inputmode="numeric" maxlength="4" placeholder="2026" />
+                <span>年</span>
+                <input id="queryMonth" type="text" inputmode="numeric" maxlength="2" placeholder="06" />
+                <span>月</span>
+                <input id="queryDay" type="text" inputmode="numeric" maxlength="2" placeholder="21" />
+                <span>日</span>
+                <input id="queryDateInput" type="hidden" />
+              </div>
+              <button class="field-action" id="queryDatePickBtn" type="button" data-i18n="datePickBtn">选择</button>
+              <input class="native-date-picker" id="queryDatePicker" type="date" aria-label="选择查询日期" />
+            </div>
+          </label>
+          <button id="queryAlmanacBtn" type="button" data-i18n="queryBtn">查询日课</button>
+        </div>
+        <div class="query-result" id="queryResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="panel qin-panel" aria-labelledby="qinTitle">
+      <div class="qin-head">
+        <div>
+          <span class="daily-seal" data-i18n="qinSeal">琴音静养</span>
+          <h2 id="qinTitle" data-i18n="qinTitle">古琴五音与身心安顿</h2>
+          <p data-i18n="qinLead">五音入五脏，是传统文化里理解声音、情绪与身体节律的一种方式。这里不做医疗承诺，只提供几首适合静心、睡前放松与整理情绪的古琴曲目。</p>
+        </div>
+        <label class="qin-mode">
+          <span data-i18n="qinModeLabel">我现在想要</span>
+          <select id="qinMode">
+            <option value="sleep" data-i18n="qinModeSleep">睡前放松</option>
+            <option value="calm" data-i18n="qinModeCalm">静心安神</option>
+            <option value="ease" data-i18n="qinModeEase">疏解郁结</option>
+            <option value="focus" data-i18n="qinModeFocus">清明专注</option>
+            <option value="beauty" data-i18n="qinModeBeauty">舒展气色</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="qin-layout">
+        <div>
+          <p id="qinResult" class="qin-result"></p>
+          <div id="qinTrackList" class="qin-track-list"></div>
+        </div>
+        <div class="qin-tone-map">
+          <strong data-i18n="qinToneTitle">五音入五脏</strong>
+          <ul>
+            <li><b>角</b><span data-i18n="qinToneJue">属木，传统对应肝，宜疏达、舒展。</span></li>
+            <li><b>徵</b><span data-i18n="qinToneZhi">属火，传统对应心，宜明朗、温煦。</span></li>
+            <li><b>宫</b><span data-i18n="qinToneGong">属土，传统对应脾，宜安定、归中。</span></li>
+            <li><b>商</b><span data-i18n="qinToneShang">属金，传统对应肺，宜清肃、收敛。</span></li>
+            <li><b>羽</b><span data-i18n="qinToneYu">属水，传统对应肾，宜沉静、入眠。</span></li>
+          </ul>
+          <p data-i18n="qinNote">建议音量调低，睡前听 10-20 分钟即可；如果越听越精神，就换成更慢、更少起伏的曲目。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-kicker">
+      <span>01</span>
+      <p>以出生之时，观气质之形；以五行之色，照见当下状态。</p>
+    </section>
+
+    <section class="layout">
+      <form id="reportForm" class="panel form-panel">
+        <p class="hidden">
+          <label>Do not fill this field <input name="bot-field" /></label>
+        </p>
+        <div class="panel-head">
+          <h2 data-i18n="formTitle">测试资料</h2>
+          <span data-i18n="formTime">约1分钟</span>
+        </div>
+
+        <label>
+          <span data-i18n="nameLabel">姓名 / 昵称</span>
+          <input name="name" autocomplete="name" data-placeholder-zh="如：Linda" data-placeholder-en="e.g. Linda" placeholder="如：Linda" required />
+        </label>
+
+        <div class="two-col">
+          <label>
+            <span data-i18n="genderLabel">性别</span>
+            <select name="gender" required>
+              <option value="" data-i18n="selectPlaceholder">请选择</option>
+              <option value="female" data-i18n="genderFemale">女性</option>
+              <option value="male" data-i18n="genderMale">男性</option>
+              <option value="private" data-i18n="genderPrivate">不便透露</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="ageLabel">当前年龄</span>
+            <input name="age" type="number" inputmode="numeric" min="16" max="90" data-placeholder-zh="如：38" data-placeholder-en="e.g. 38" placeholder="如：38" />
+          </label>
+        </div>
+
+        <div class="birth-time-grid">
+          <label>
+            <span data-i18n="birthDateLabel">出生日期</span>
+            <div class="input-with-action birth-date-control">
+              <div class="date-parts" aria-label="出生日期">
+                <input name="birthYear" type="text" inputmode="numeric" maxlength="4" data-placeholder-zh="1988" data-placeholder-en="1988" placeholder="1988" required />
+                <span>年</span>
+                <input name="birthMonth" type="text" inputmode="numeric" maxlength="2" data-placeholder-zh="05" data-placeholder-en="05" placeholder="05" required />
+                <span>月</span>
+                <input name="birthDay" type="text" inputmode="numeric" maxlength="2" data-placeholder-zh="18" data-placeholder-en="18" placeholder="18" required />
+                <span>日</span>
+                <input name="birthDate" type="hidden" />
+              </div>
+              <button class="field-action" id="birthDatePickBtn" type="button" data-i18n="datePickBtn">选择</button>
+              <input class="native-date-picker" id="birthDatePicker" type="date" aria-label="选择出生日期" />
+            </div>
+          </label>
+          <label>
+            <span data-i18n="birthTimeLabel">出生时间</span>
+            <div class="time-parts" aria-label="出生时间">
+              <input name="birthHour" type="text" inputmode="numeric" maxlength="2" data-placeholder-zh="09" data-placeholder-en="09" placeholder="09" required />
+              <span>时</span>
+              <input name="birthMinute" type="text" inputmode="numeric" maxlength="2" data-placeholder-zh="30" data-placeholder-en="30" placeholder="30" required />
+              <span>分</span>
+              <input name="birthTime" type="hidden" />
+            </div>
+          </label>
+        </div>
+
+        <label>
+          <span data-i18n="birthPlaceLabel">出生地点</span>
+          <input name="birthPlace" list="worldPlaces" data-placeholder-zh="如：上海，中国 / New York, USA" data-placeholder-en="e.g. Shanghai, China / New York, USA" placeholder="如：上海，中国 / New York, USA" required />
+          <datalist id="worldPlaces">
+            <option value="Shanghai, China"></option>
+            <option value="Beijing, China"></option>
+            <option value="Hong Kong, China"></option>
+            <option value="Taipei, Taiwan"></option>
+            <option value="Tokyo, Japan"></option>
+            <option value="Seoul, South Korea"></option>
+            <option value="Singapore"></option>
+            <option value="Bangkok, Thailand"></option>
+            <option value="London, United Kingdom"></option>
+            <option value="Paris, France"></option>
+            <option value="Berlin, Germany"></option>
+            <option value="Sydney, Australia"></option>
+            <option value="New York, USA"></option>
+            <option value="Los Angeles, USA"></option>
+            <option value="Toronto, Canada"></option>
+            <option value="Vancouver, Canada"></option>
+          </datalist>
+        </label>
+
+        <div class="two-col place-calibration">
+          <label>
+            <span data-i18n="birthProvinceLabel">省份 / 国家地区</span>
+            <select name="birthProvince">
+              <option value="" data-i18n="provincePlaceholder">请选择省份、地区或海外分区</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="birthCityCountyLabel">城市 / 县区 / 海外城市</span>
+            <select name="birthCityCounty">
+              <option value="" data-i18n="cityCountyPlaceholder">先选择上一级地区</option>
+            </select>
+            <small data-i18n="cityCountyHint">选中后会自动填入出生地点、经度与时区；若县城或海外小城市不在列表，可手动填写地点和经度。</small>
+          </label>
+        </div>
+
+        <div class="two-col place-calibration">
+          <label>
+            <span data-i18n="birthPlacePresetLabel">快速校准</span>
+            <select name="birthPlacePreset">
+              <option value="" data-i18n="placePresetManual">手动填写 / 不在列表</option>
+              <option value="beijing">北京｜东城区 116.42E</option>
+              <option value="shanghai">上海｜黄浦区 121.49E</option>
+              <option value="guangzhou">广东｜广州 113.26E</option>
+              <option value="shenzhen">广东｜深圳 114.06E</option>
+              <option value="hangzhou">浙江｜杭州 120.16E</option>
+              <option value="nanjing">江苏｜南京 118.78E</option>
+              <option value="suzhou">江苏｜苏州 120.62E</option>
+              <option value="chengdu">四川｜成都 104.07E</option>
+              <option value="chongqing">重庆｜渝中区 106.55E</option>
+              <option value="xian">陕西｜西安 108.94E</option>
+              <option value="wuhan">湖北｜武汉 114.31E</option>
+              <option value="changsha">湖南｜长沙 112.94E</option>
+              <option value="zhengzhou">河南｜郑州 113.63E</option>
+              <option value="jinan">山东｜济南 117.12E</option>
+              <option value="qingdao">山东｜青岛 120.38E</option>
+              <option value="shenyang">辽宁｜沈阳 123.43E</option>
+              <option value="harbin">黑龙江｜哈尔滨 126.64E</option>
+              <option value="kunming">云南｜昆明 102.83E</option>
+              <option value="urumqi">新疆｜乌鲁木齐 87.62E</option>
+              <option value="lhasa">西藏｜拉萨 91.13E</option>
+              <option value="hongkong">香港 114.17E</option>
+              <option value="taipei">台湾｜台北 121.56E</option>
+              <option value="singapore">Singapore 103.82E</option>
+              <option value="tokyo">Tokyo 139.69E</option>
+              <option value="newyork">New York 74.01W</option>
+              <option value="london">London 0.13W</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="longitudeLabel">出生地经度</span>
+            <input name="birthLongitude" type="number" inputmode="decimal" step="0.01" min="-180" max="180" data-placeholder-zh="县城请填经度，如：120.62" data-placeholder-en="e.g. 120.62, west is negative" placeholder="县城请填经度，如：120.62" />
+            <small data-i18n="longitudeHint">县城、乡镇或海外出生，建议用地图查询经度填写；东经为正，西经为负。</small>
+          </label>
+        </div>
+
+        <div class="two-col place-calibration">
+          <label>
+            <span data-i18n="trueSolarLabel">真太阳时校准</span>
+            <select name="trueSolarMode">
+              <option value="auto" data-i18n="trueSolarAuto">按经度自动校准</option>
+              <option value="off" data-i18n="trueSolarOff">暂不校准，按钟表时间</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="ziRuleLabel">子时换日规则</span>
+            <select name="ziRule">
+              <option value="ziStartNextDay" data-i18n="ziStartRule">子初换日：23:00 起算次日</option>
+              <option value="midnight" data-i18n="midnightRule">子正换日：00:00 起算次日</option>
+            </select>
+            <small data-i18n="ziRuleHint">23点前后出生的人建议特别确认；系统会在报告中显示校准说明。</small>
+          </label>
+        </div>
+
+        <label>
+          <span data-i18n="timezoneLabel">出生地时区</span>
+          <select name="birthTimezone" required>
+            <option value="+08:00" data-i18n="tzChina">UTC+08:00 中国/新加坡/台北/香港</option>
+            <option value="+12:00">UTC+12:00 New Zealand</option>
+            <option value="+10:00">UTC+10:00 Sydney / Melbourne</option>
+            <option value="+09:30">UTC+09:30 Adelaide</option>
+            <option value="+09:00" data-i18n="tzJapan">UTC+09:00 日本/韩国</option>
+            <option value="+07:00">UTC+07:00 Bangkok / Vietnam / Jakarta</option>
+            <option value="+06:30">UTC+06:30 Yangon</option>
+            <option value="+06:00">UTC+06:00 Dhaka</option>
+            <option value="+05:45">UTC+05:45 Kathmandu</option>
+            <option value="+05:30">UTC+05:30 India / Sri Lanka</option>
+            <option value="+05:00">UTC+05:00 Pakistan</option>
+            <option value="+04:00">UTC+04:00 UAE</option>
+            <option value="+03:00">UTC+03:00 Turkey / Qatar / Saudi Arabia</option>
+            <option value="+02:00">UTC+02:00 Finland / Greece / South Africa</option>
+            <option value="+01:00">UTC+01:00 Paris / Berlin / Rome</option>
+            <option value="+00:00">UTC+00:00 London / Lisbon</option>
+            <option value="-03:00">UTC-03:00 Brazil / Argentina</option>
+            <option value="-04:00">UTC-04:00 Chile</option>
+            <option value="-05:00">UTC-05:00 New York / Toronto / Lima</option>
+            <option value="-06:00">UTC-06:00 Chicago / Mexico City</option>
+            <option value="-07:00">UTC-07:00 Calgary</option>
+            <option value="-08:00">UTC-08:00 Los Angeles / Vancouver</option>
+            <option value="unknown" data-i18n="tzUnknown">不确定，先按当地出生时间</option>
+          </select>
+          <small data-i18n="timezoneHint">海外出生请填写当地出生时间，并选择出生地时区。若后续做完整梳理，会再复核节气、时区与出生地误差。</small>
+        </label>
+
+        <label>
+          <span data-i18n="currentPlaceLabel">现在居住地</span>
+          <input name="currentPlace" data-placeholder-zh="如：上海 / Singapore / London" data-placeholder-en="e.g. Shanghai / Singapore / London" placeholder="如：上海 / Singapore / London" />
+        </label>
+
+        <label>
+          <span data-i18n="mainNeedLabel">你最想先了解什么？</span>
+          <select name="mainNeed" required>
+            <option value="" data-i18n="selectPlaceholder">请选择</option>
+            <option value="complexion" data-i18n="needComplexion">气色、衰老感、面部紧绷</option>
+            <option value="style" data-i18n="needStyle">穿搭风格和五行气质</option>
+            <option value="sleep" data-i18n="needSleep">睡眠、疲惫和情绪消耗</option>
+            <option value="posture" data-i18n="needPosture">体态、肩颈、下颌紧张</option>
+            <option value="life" data-i18n="needLife">事业关系与近期状态</option>
+          </select>
+        </label>
+
+        <label>
+          <span data-i18n="stateLabel">最近最明显的状态</span>
+          <textarea name="currentState" rows="3" data-placeholder-zh="如：睡眠浅、脸垮、焦虑、肩颈紧、工作压力大..." data-placeholder-en="e.g. light sleep, tired face, anxiety, tight neck, work pressure..." placeholder="如：睡眠浅、脸垮、焦虑、肩颈紧、工作压力大..." required></textarea>
+        </label>
+
+        <label class="check">
+          <input name="agree" type="checkbox" required />
+          <span data-i18n="agreeText">我理解本测试仅作传统文化和生活方式参考，不替代医疗、心理或法律建议。</span>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="previewBtn" data-i18n="previewBtn">先生成免费画像</button>
+          <button type="button" id="filloutBtn" data-i18n="submitBtn">复制资料</button>
+        </div>
+        <p class="submit-status" id="submitStatus" aria-live="polite"></p>
+      </form>
+
+      <section class="panel report" id="report">
+        <div class="empty">
+          <strong data-i18n="emptyTitle">填写资料后生成预览</strong>
+          <span data-i18n="emptyText">免费区会显示四柱、大运流年、日主气质、五行色彩、体质倾向、脸部状态和穿搭提示。</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel launch-panel">
+      <div class="panel-head">
+        <h2 data-i18n="usageTitle">正式使用方式</h2>
+        <span data-i18n="betaTag">内测版</span>
+      </div>
+      <div class="launch-grid">
+        <div>
+          <strong data-i18n="freeTier">免费</strong>
+          <p data-i18n="freeDesc">填写出生资料后，即时生成四柱排盘、气质底色、五行比例、穿衣色系与日常养护提示。</p>
+        </div>
+        <div>
+          <strong>29元</strong>
+          <p data-i18n="tier29">人工生成详细文字报告：在基础画像之上，细看气色体态、脸部状态、五行穿搭与日常养修方向。</p>
+        </div>
+        <div>
+          <strong>199元</strong>
+          <p data-i18n="tier199">人工详细报告 + 40分钟一对一专属解读：结合你的当下状态，梳理气质定位、形象表达与后续养修路径。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
