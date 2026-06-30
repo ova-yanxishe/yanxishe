@@ -1766,45 +1766,51 @@ function getTwelveOfficer(date) {
 }
 
 function renderAlmanacQuery(rawValue) {
-  const normalized = normalizeCalendarDate(rawValue || getQueryDateValue() || formatDateValue(new Date()));
-  if (!normalized) {
-    queryResult.innerHTML = `<p class="query-hint">${currentLang === "zh" ? "请完整填写年月日，例如 2026 年 06 月 21 日。" : "Please complete year, month and day, e.g. 2026 / 06 / 21."}</p>`;
+  if (!queryResult) return;
+  try {
+    const normalized = normalizeCalendarDate(rawValue || getQueryDateValue() || formatDateValue(new Date()));
+    if (!normalized) {
+      queryResult.innerHTML = `<p class="query-hint">${currentLang === "zh" ? "请完整填写年月日，例如 2026 年 06 月 21 日。" : "Please complete year, month and day, e.g. 2026 / 06 / 21."}</p>`;
+      return;
+    }
+
+    setQueryDateValue(normalized);
+    if (queryDatePicker) queryDatePicker.value = normalized;
+    const date = parseLocalDateTime(normalized, "00:00");
+    const dayPillar = getDayPillar(date);
+    const solar = getCurrentSolarTerm(date);
+    const officer = getTwelveOfficer(date);
+    const item = officerCopy[currentLang][officer.key];
+    const solarName = currentLang === "zh" ? solar.current.zh : solar.current.en;
+    const nextSolarName = currentLang === "zh" ? solar.next.zh : solar.next.en;
+    const officerName = currentLang === "zh" ? `${officer.zh}日` : officer.en;
+    const dateText = date.toLocaleDateString(currentLang === "zh" ? "zh-CN" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      weekday: "short"
+    });
+
+    queryResult.innerHTML = `
+      <div class="query-result-head">
+        <div>
+          <span>${dateText}</span>
+          <strong>${currentLang === "zh" ? `${dayPillar}日` : `${dayPillar} day`}</strong>
+        </div>
+        <em class="grade-pill grade-${item.tone}">${item.grade}</em>
+      </div>
+      <div class="query-result-grid">
+        <p><b>${currentLang === "zh" ? "值日" : "Officer"}</b><span>${officerName}</span></p>
+        <p><b>${currentLang === "zh" ? "节气" : "Solar Term"}</b><span>${solarName} · ${currentLang === "zh" ? `距${nextSolarName}约${solar.daysToNext}天` : `about ${solar.daysToNext} day(s) to ${nextSolarName}`}</span></p>
+        <p><b>${currentLang === "zh" ? "宜" : "Do"}</b><span>${item.yi}</span></p>
+        <p><b>${currentLang === "zh" ? "忌" : "Avoid"}</b><span>${item.ji}</span></p>
+      </div>
+      <p class="query-note">${item.note}</p>
+    `;
+  } catch (error) {
+    queryResult.innerHTML = `<p class="query-hint">${currentLang === "zh" ? "日课暂时没有生成，请检查日期是否完整，或稍后重新打开页面。" : "The day note could not be generated. Please check the date and try again."}</p>`;
     return;
   }
-
-  setQueryDateValue(normalized);
-  queryDatePicker.value = normalized;
-  const date = parseLocalDateTime(normalized, "00:00");
-  const dayPillar = getDayPillar(date);
-  const solar = getCurrentSolarTerm(date);
-  const officer = getTwelveOfficer(date);
-  const item = officerCopy[currentLang][officer.key];
-  const solarName = currentLang === "zh" ? solar.current.zh : solar.current.en;
-  const nextSolarName = currentLang === "zh" ? solar.next.zh : solar.next.en;
-  const officerName = currentLang === "zh" ? `${officer.zh}日` : officer.en;
-  const dateText = date.toLocaleDateString(currentLang === "zh" ? "zh-CN" : "en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    weekday: "short"
-  });
-
-  queryResult.innerHTML = `
-    <div class="query-result-head">
-      <div>
-        <span>${dateText}</span>
-        <strong>${currentLang === "zh" ? `${dayPillar}日` : `${dayPillar} day`}</strong>
-      </div>
-      <em class="grade-pill grade-${item.tone}">${item.grade}</em>
-    </div>
-    <div class="query-result-grid">
-      <p><b>${currentLang === "zh" ? "值日" : "Officer"}</b><span>${officerName}</span></p>
-      <p><b>${currentLang === "zh" ? "节气" : "Solar Term"}</b><span>${solarName} · ${currentLang === "zh" ? `距${nextSolarName}约${solar.daysToNext}天` : `about ${solar.daysToNext} day(s) to ${nextSolarName}`}</span></p>
-      <p><b>${currentLang === "zh" ? "宜" : "Do"}</b><span>${item.yi}</span></p>
-      <p><b>${currentLang === "zh" ? "忌" : "Avoid"}</b><span>${item.ji}</span></p>
-    </div>
-    <p class="query-note">${item.note}</p>
-  `;
 }
 
 function renderDailyRetention(element) {
