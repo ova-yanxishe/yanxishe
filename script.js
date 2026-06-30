@@ -291,15 +291,15 @@ const i18n = {
     ritualLabel: "今日旺自己",
     studyCardLabel: "五行气质学习卡",
     studyCardHint: "ORIENTAL VITAL AESTHETICS · DAILY CARD",
-    testLabel: "每日一签",
-    testTitle: "今日想先看哪一签？",
-    testQuietNote: "抽签前，先深呼吸三次，让心安静下来。心头无事不起念，起念再看今日提示。",
-    testLove: "感情签",
-    testWealth: "财气签",
-    testCareer: "事业签",
-    testBeauty: "气色签",
-    testCalm: "心神签",
-    testHealth: "身心签",
+    testLabel: "今日气韵",
+    testTitle: "今天想先照见哪一面？",
+    testQuietNote: "开始前，先深呼吸三次。让心安静一点，再看今日给你的气韵提醒。",
+    testLove: "感情",
+    testWealth: "财气",
+    testCareer: "事业",
+    testBeauty: "气色",
+    testCalm: "心神",
+    testHealth: "身心",
     articleLabel: "今日养修短文",
     articleMeta: "每日自动更新，只留今日一篇。",
     oracleQuestionLabel: "今天想问什么？",
@@ -409,9 +409,9 @@ const i18n = {
     ritualLabel: "Today's Small Practice",
     studyCardLabel: "Five Element Temperament Card",
     studyCardHint: "ORIENTAL VITAL AESTHETICS · DAILY CARD",
-    testLabel: "Daily Reading",
-    testTitle: "Which note do you want today?",
-    testQuietNote: "Before drawing, take three quiet breaths. Ask only when the heart has a real question.",
+    testLabel: "Daily Vitality",
+    testTitle: "Which part of yourself do you want to see today?",
+    testQuietNote: "Before reading, take three quiet breaths. Let the mind settle, then receive today's note.",
     testLove: "Love",
     testWealth: "Wealth",
     testCareer: "Career",
@@ -1033,98 +1033,6 @@ const studyCards = {
   }
 };
 
-const dailyTestCopy = {
-  zh: {
-    love: {
-      wood: "签文：春风入院，先暖其心。解签：关系今日宜柔和表达，不必急着证明谁对谁错。若你愿意把自己的生辰、相处状态与当下困惑一起整理，可以添加颜习社微信，做一次更贴近你的关系气质梳理。",
-      fire: "签文：灯火可亲，不宜太炽。解签：今天适合主动一点，但热情要有分寸。真正让关系变好的，不是用力追问，而是让对方感到清楚与安定。",
-      earth: "签文：厚土载花，慢处有情。解签：关系今日看行动，不看空话。一个实际的小照顾，比反复确认更能让心安下来。",
-      metal: "签文：玉有边界，光才清明。解签：今天适合把不舒服说清楚。温和的边界不是冷漠，是让关系有继续变好的空间。",
-      water: "签文：水静见月，心定见人。解签：今天不急着给答案。先看对方行动，也看自己真实感受，关系会更清楚。"
-    },
-    wealth: {
-      wood: "签文：先种一枝，后见满庭。解签：今日财气来自价值被看懂。整理一个案例、发一条内容、联系一个老客户，都会比空想更有效。",
-      fire: "签文：有光则见，有度则久。解签：今天适合展示自己，但报价与边界要讲清楚。被看见只是第一步，能成交靠的是信任感。",
-      earth: "签文：仓廪先实，交易自稳。解签：今日适合把一个小服务讲明白。少承诺，多落地，反而更容易让人愿意付费。",
-      metal: "签文：去繁取精，财路自清。解签：今日财气在筛选。拒绝低价消耗，留下真正匹配的人，才是守住正财。",
-      water: "签文：深水不响，暗藏其源。解签：今天适合研究客户真正想要什么。先洞察，再开口，成交会更自然。"
-    },
-    health: {
-      wood: "签文：枝舒则气顺。解签：今天先看肩颈、眼睛和情绪是否憋住。舒展身体，比硬撑更能养气色。",
-      fire: "签文：火明不燥，神自有光。解签：今天注意少熬夜、少急躁。气色要靠稳定的热量，不靠一时兴奋。",
-      earth: "签文：中土安，四时顺。解签：今天先照顾脾胃和节律，少冰甜，吃一顿热饭。身体稳了，脸也会显得更稳。",
-      metal: "签文：清气入肺，杂念可收。解签：今天适合做减法：少刷屏、深呼吸、整理空间。清爽感会回到脸上。",
-      water: "签文：静水养根，夜深归藏。解签：今天最该照顾睡眠和恢复。早点收手机，让身体知道可以休息了。"
-    }
-  },
-  en: {
-    love: {
-      wood: "Reading: Spring wind enters softly. Interpretation: express needs gently today. If you want to connect your birth profile with current relationship patterns, add Yanxishe on WeChat for a closer personal reading.",
-      fire: "Reading: A lamp is warm when not too bright. Interpretation: be active, but keep proportion. Clarity creates safety.",
-      earth: "Reading: Flowers need steady soil. Interpretation: action matters more than repeated reassurance today.",
-      metal: "Reading: Jade shines through clear edges. Interpretation: a gentle boundary can make the relationship cleaner.",
-      water: "Reading: Still water sees the moon. Interpretation: wait, observe actions and listen to your own feeling."
-    },
-    wealth: {
-      wood: "Reading: Plant one branch first. Interpretation: money improves when your value is understood. Share a case, post content or contact an old client.",
-      fire: "Reading: Light needs measure to last. Interpretation: show yourself, but keep offer and boundary clear.",
-      earth: "Reading: A full storehouse makes stable trade. Interpretation: explain one small service clearly; grounded offers convert better.",
-      metal: "Reading: Remove excess and the path clears. Interpretation: filtering low-value drain protects real income.",
-      water: "Reading: Deep water holds its source. Interpretation: study client needs first; the ask will feel more natural."
-    },
-    health: {
-      wood: "Reading: When branches open, breath moves. Interpretation: care for neck, eyes and suppressed emotion today.",
-      fire: "Reading: Fire should be bright, not dry. Interpretation: reduce late nights and urgency; stable warmth restores complexion.",
-      earth: "Reading: When the center is steady, seasons align. Interpretation: support digestion and rhythm with warm food.",
-      metal: "Reading: Clear breath gathers the mind. Interpretation: reduce screen noise, breathe deeply and clear space.",
-      water: "Reading: Quiet water nourishes roots. Interpretation: protect sleep and recovery; put the phone down earlier."
-    }
-  }
-};
-
-const dailyArticles = [
-  {
-    zhTitle: "美感先从不急开始",
-    zhText: "一个人的气质，不只在衣服和脸上，也在他说话的速度、走路的松紧、做选择时的安定。今天不必急着改变很多，只要把一个地方收拾清楚，把一句话说得温和而准确，就是在养自己的气。",
-    zhQuote: "重为轻根，静为躁君。——《道德经》第二十六章",
-    enTitle: "Beauty begins with not rushing",
-    enText: "Temperament is not only on the face or clothes. It appears in speaking speed, body ease and the steadiness of choices. Today, clear one place and say one sentence gently but clearly.",
-    enQuote: "Heaviness is the root of lightness; stillness is the master of restlessness. — Dao De Jing, Chapter 26"
-  },
-  {
-    zhTitle: "真正旺自己的颜色，是能托住你的颜色",
-    zhText: "颜色不是迷信，也不是规则。它是一种环境语言。你今天穿的颜色，如果能让气色更干净、轮廓更安定、心里更有底，它就正在帮助你。",
-    zhQuote: "见素抱朴，少私寡欲。——《道德经》第十九章",
-    enTitle: "A supportive color holds your state",
-    enText: "Color is not a superstition or a rigid rule. It is environmental language. If today's color makes complexion cleaner, contour calmer and the heart steadier, it is supporting you.",
-    enQuote: "See simplicity and hold plainness; lessen selfishness and desire. — Dao De Jing, Chapter 19"
-  },
-  {
-    zhTitle: "气色来自恢复，不只是修饰",
-    zhText: "妆容可以提亮一时，恢复才能让人耐看。睡眠、呼吸、肩颈、饮水、情绪边界，这些看似朴素的事，才是长期气色的底盘。",
-    zhQuote: "水静犹明，而况精神。——《庄子・天道》",
-    enTitle: "Complexion comes from recovery",
-    enText: "Makeup can brighten a moment; recovery makes beauty last. Sleep, breath, neck and shoulders, hydration and emotional boundaries are the base of lasting presence.",
-    enQuote: "Still water is clear; how much more so the spirit. — Zhuangzi, The Way of Heaven"
-  },
-  {
-    zhTitle: "把自己放回自己的节奏里",
-    zhText: "很多疲惫不是能力不足，而是节奏被别人牵走。今天可以少比较一点，少解释一点，多做一件真正会让自己回来的事。",
-    zhQuote: "此心安处是吾乡。——苏轼《定风波》",
-    enTitle: "Return to your own rhythm",
-    enText: "Much tiredness is not lack of ability; it is losing your rhythm to others. Compare less, explain less, and do one thing that brings you back.",
-    enQuote: "Where the heart is at peace, there is home. — Su Shi"
-  },
-  {
-    zhTitle: "留白也是一种力量",
-    zhText: "不是所有地方都要填满。穿搭留白，语言留白，时间留白，都会让人的气质更有余地。余地，是高级感的一部分。",
-    zhQuote: "虚室生白，吉祥止止。——《庄子・人间世》",
-    enTitle: "Space is also strength",
-    enText: "Not every place needs to be filled. Space in style, speech and schedule gives temperament room to breathe. Room is part of refinement.",
-    enQuote: "In an empty room, brightness arises; auspiciousness comes to rest. — Zhuangzi"
-  }
-];
-
 const oracleCopy = {
   zh: {
     wealth: {
@@ -1452,7 +1360,7 @@ function buildOfficerBaseReading(topic, officer, lang) {
   const name = topicNames[lang]?.[topic] || topicNames[lang]?.calm || topic;
   const frame = officerTopicFrames[lang]?.[topic]?.[officer.key] || officerReadingFrame[lang]?.[officer.key] || "";
   if (lang === "zh") {
-    return `${name}签：${frame}`;
+    return `${name}：${frame}`;
   }
   return `Today's ${name} follows ${officer.en}: ${frame}`;
 }
@@ -1460,9 +1368,19 @@ function buildOfficerBaseReading(topic, officer, lang) {
 function buildReadingCta(topic, lang) {
   const name = topicNames[lang]?.[topic] || topicNames[lang]?.calm || topic;
   if (lang === "zh") {
-    return `如果你想把这条${name}提示，进一步落到自己的出生资料、近期状态和气质色彩里，可以添加颜习社微信 ${OWNER_WECHAT}，我会帮你做更贴近个人的梳理。`;
+    return `如果这条${name}提醒刚好贴近你最近的状态，可以先保存下来。想进一步看自己的气质底色、穿搭方向和近期节律，可添加颜习社微信 ${OWNER_WECHAT}，我会帮你整理成更贴近个人的一条线。`;
   }
   return `If you want to connect this ${name} note with your birth profile, current state and personal colors, add Yanxishe on WeChat: ${OWNER_WECHAT}.`;
+}
+
+function buildDailyColorNote(element, lang) {
+  const support = sourceOf(element);
+  const partner = generateMap[element];
+  const caution = controllerOf(element);
+  if (lang === "zh") {
+    return `扶助色可取${elementHan[support]}气，协作色可取${elementHan[partner]}气，慎用过重的${elementHan[caution]}气。落实到穿搭上，不必全身改色，只在上衣、围巾、耳饰、包袋或唇色里取一点，就足够改变今天的气场。`;
+  }
+  return `Support with ${elementEn[support]}, collaborate with ${elementEn[partner]}, and use heavy ${elementEn[caution]} tones carefully. A small accent in top, scarf, earrings, bag or lip color is enough.`;
 }
 
 const dailyVerses = [
@@ -1916,7 +1834,7 @@ function renderDailyRetention(element) {
   if (dailyArticleCta) dailyArticleCta.textContent = cta;
   if (dailyTestResult) {
     dailyTestResult.textContent = lang === "zh"
-      ? "先深呼吸，让心安静下来。若心里有一个真正想看的问题，再抽一支今日签。"
+      ? "先深呼吸，让心安静下来。选择一个主题，看今天适合如何安顿自己、整理气色与行动。"
       : "Take a quiet breath first. If the heart has a real question, draw today's note.";
   }
 }
@@ -1936,13 +1854,14 @@ function buildDailyReading(topic, mode = "test") {
   const timeBranch = getTimeBranch(date);
   const timeName = timeBranchNames[lang][timeBranch];
   const timeNote = pickReadingVariant(timeRhythmCopy[lang], `${topic}-${timeBranch}`, mode === "oracle" ? 61 : 43, date);
+  const colorNote = buildDailyColorNote(element, lang);
   const cta = buildReadingCta(topic, lang);
 
   if (lang === "zh") {
-    return `今日日签：${officerBase}\n\n今日气象：${dayPillar}日，属${officerItem.grade}。${solarName}气中，宜顺势而行：${addon}\n\n时辰提示：${timeName}，${timeNote}\n\n${cta}`;
+    return `今日气韵：${officerBase}\n\n日子底色：${dayPillar}日，属${officerItem.grade}。${solarName}气中，宜顺势而行：${addon}\n\n今日色彩：${colorNote}\n\n时辰提示：${timeName}，${timeNote}\n\n${cta}`;
   }
 
-  return `Daily reading: ${officerBase}\n\nDaily atmosphere: ${dayPillar} day, ${officerItem.grade}. Under ${solarName}, move with the day: ${addon}\n\nHour note: ${timeName}, ${timeNote}\n\n${cta}`;
+  return `Daily vitality: ${officerBase}\n\nDaily atmosphere: ${dayPillar} day, ${officerItem.grade}. Under ${solarName}, move with the day: ${addon}\n\nColor note: ${colorNote}\n\nHour note: ${timeName}, ${timeNote}\n\n${cta}`;
 }
 
 function buildOraclePrompt(topic) {
