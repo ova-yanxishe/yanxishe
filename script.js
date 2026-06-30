@@ -270,7 +270,7 @@ const provincePlaces = Object.fromEntries([
 
 const i18n = {
   zh: {
-    heroTitle: "我的气质画像",
+    heroTitle: "东方气韵",
     heroLead: "输入生辰，看看自己的气质底色、适合的色彩、面部气韵和日常养修方向。它不是给你下定义，而是用一种温和的方式，陪你把自己看清楚一点。",
     heroCta: "获取我的气质画像",
     priceLabel: "基础排盘",
@@ -388,7 +388,7 @@ const i18n = {
     selectPlaceholder: "请选择"
   },
   en: {
-    heroTitle: "My Temperament Portrait",
+    heroTitle: "Oriental Vital Presence",
     heroLead: "Enter your birth details to see your temperament tone, suitable colors, facial presence and daily cultivation direction. It is not here to define you, but to help you understand yourself more gently.",
     heroCta: "Get My Temperament Portrait",
     priceLabel: "Basic Chart",
@@ -1974,7 +1974,7 @@ function renderQin() {
 
 function applyLanguage() {
   document.documentElement.lang = currentLang === "zh" ? "zh-CN" : "en";
-  document.title = currentLang === "zh" ? "东方颜习社｜我的气质画像" : "Oriental Vital Aesthetics | My Temperament Portrait";
+  document.title = currentLang === "zh" ? "东方颜习社｜东方气韵" : "Oriental Vital Aesthetics | Oriental Vital Presence";
   langToggle.textContent = currentLang === "zh" ? "EN" : "中";
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;

@@ -1,9 +1,9 @@
-const CACHE_NAME = "ova-yanxishe-pwa-v20260630-date-bg-fix2";
+const CACHE_NAME = "ova-yanxishe-pwa-v20260630-qiyun-cta1";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260630-date-bg-fix2",
-  "./script.js?v=20260630-date-bg-fix2",
+  "./styles.css?v=20260630-qiyun-cta1",
+  "./script.js?v=20260630-qiyun-cta1",
   "./manifest.webmanifest",
   "./enso_circle_print_thin.png",
   "./oriental_woman_bg.jpg"
