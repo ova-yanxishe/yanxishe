@@ -1353,11 +1353,58 @@ const officerReadingFrame = {
   }
 };
 
+const officerTopicFrames = {
+  zh: {
+    love: {
+      jian: "关系适合从一句真诚的话开始，不急着要答案，先让彼此看见心意。",
+      chu: "关系适合清掉误会和旧情绪，少翻旧账，多说当下真实的感受。",
+      man: "关系容易情绪变满，适合给温度，但不要用过多期待压住对方。",
+      ping: "关系宜平和沟通，把话说稳，比试探和追问更能留下余地。",
+      ding: "关系适合确认边界与相处节奏，让暧昧和不安慢慢落到清楚处。",
+      zhi: "关系重在持续跟进，一句稳定的回应、一个实际的小行动，会比热烈表态更有用。",
+      po: "关系适合看见问题，不宜强行粉饰。该停止的消耗，今天可以先放下。",
+      wei: "关系宜谨慎表达，先稳住自己，再回应对方，不要在情绪高处做决定。",
+      cheng: "关系适合把准备好的心意说出来，真诚、明确、不过度用力。",
+      shou: "关系适合收回过度付出，把注意力放回自己，气质才不会被拉散。",
+      kai: "关系适合打开表达，邀约、回应、示好都可以，但保持松弛和体面。",
+      bi: "关系适合安静观察，不急着靠近，也不急着远离，先听见自己的心。"
+    },
+    wealth: {
+      jian: "财气适合从一个小产品、一个报价或一条内容开始，先让价值有入口。",
+      chu: "财气适合清理低效合作和无效承诺，去掉消耗，变现路径才会清楚。",
+      man: "财气适合整理资源和案例，但不要承诺过满，先把能交付的部分说清楚。",
+      ping: "财气宜稳，不急着扩张。今天适合复盘价格、流程和客户真正需要什么。",
+      ding: "财气适合定价、定套餐、定交付边界，让别人知道如何购买你。",
+      zhi: "财气重在跟进，把手里的客户、报价和作品推进一步，比重新开局更有效。",
+      po: "财气适合止损和筛选，低价消耗、空头承诺、不清楚的合作先慢下来。",
+      wei: "财气宜谨慎，重要付款、合作、投入多看一遍，先保住节奏。",
+      cheng: "财气适合成交和发布，把已经准备好的服务摆出来，让人看见结果。",
+      shou: "财气适合收款、整理账目、复盘旧客户，把散开的机会收回来。",
+      kai: "财气适合公开展示、邀约咨询、发作品案例，让合适的人知道你能提供什么。",
+      bi: "财气适合后台打磨，不急着卖，先把页面、话术和交付细节整理好。"
+    },
+    health: {
+      jian: "身心适合重新建立一个小节律，先从早睡、喝水或肩颈放松开始。",
+      chu: "身心适合减少负担，少冰冷、少熬夜、少信息噪音，让气色先干净起来。",
+      man: "身心容易过满，饮食、情绪和安排都宜留一点余地，脸上才不显紧。",
+      ping: "身心宜平衡，今天不适合猛补猛练，温和走动和规律吃饭更有帮助。",
+      ding: "身心适合固定一个养修动作，比如睡前放松、热水、拉伸或早一点收手机。",
+      zhi: "身心重在坚持，但不要硬撑。做一点轻运动，胜过带着疲惫强行用力。",
+      po: "身心适合打断坏循环，减少熬夜、焦虑刷屏和身体紧绷。",
+      wei: "身心宜谨慎，先观察疲惫、眼干、胃口和情绪，不做过度消耗。",
+      cheng: "身心适合完成一个恢复闭环：吃好一餐、睡好一觉、让肩颈松下来。",
+      shou: "身心适合收神，减少外界刺激，给脸部和身体一点安静的恢复时间。",
+      kai: "身心适合轻轻打开，晒光、舒展、整理发型和衣着，都会让气色更顺。",
+      bi: "身心适合藏养，少社交、少比较、少输出，让身体知道可以休息。"
+    }
+  }
+};
+
 function buildOfficerBaseReading(topic, officer, lang) {
   const name = topicNames[lang]?.[topic] || topicNames[lang]?.calm || topic;
-  const frame = officerReadingFrame[lang]?.[officer.key] || "";
+  const frame = officerTopicFrames[lang]?.[topic]?.[officer.key] || officerReadingFrame[lang]?.[officer.key] || "";
   if (lang === "zh") {
-    return `${name}签：今日值${officer.zh}，${frame}`;
+    return `${name}签：${frame}`;
   }
   return `Today's ${name} follows ${officer.en}: ${frame}`;
 }
@@ -1850,6 +1897,28 @@ function buildDailyReading(topic, mode = "test") {
   return `${officerBase}\n\nDaily note: ${dayPillar} day, ${officerItem.grade}. Under ${solarName}, move with the day: ${addon}\n\n${timeName} note: ${timeNote}\n\n${cta}`;
 }
 
+function buildOraclePrompt(topic) {
+  const date = new Date();
+  const lang = currentLang;
+  const element = getDailyElement();
+  const dayPillar = getDayPillar(date);
+  const officer = getTwelveOfficer(date);
+  const solar = getCurrentSolarTerm(date);
+  const solarName = lang === "zh" ? solar.current.zh : solar.current.en;
+  const timeBranch = getTimeBranch(date);
+  const timeName = timeBranchNames[lang][timeBranch];
+  const base = oracleCopy[lang]?.[topic]?.[element] || oracleCopy[lang]?.calm?.[element] || "";
+  const actionTopic = dailyReadingAddons[lang][topic] ? topic : "calm";
+  const action = pickReadingVariant(dailyReadingAddons[lang][actionTopic], `oracle-${topic}`, 89, date);
+  const timeNote = pickReadingVariant(timeRhythmCopy[lang], `oracle-${topic}-${timeBranch}`, 113, date);
+
+  if (lang === "zh") {
+    return `今日提示：${base}\n\n落地动作：${action}\n\n${timeName}小提醒：${timeNote}\n\n今日参考：${dayPillar}日，${solarName}气中，顺势即可，不必用力过满。`;
+  }
+
+  return `Today's note: ${base}\n\nAction: ${action}\n\n${timeName} reminder: ${timeNote}\n\nReference: ${dayPillar} day, under ${solarName}. Move with the day without over-forcing.`;
+}
+
 function renderDaily() {
   const today = new Date();
   const lang = currentLang;
@@ -1896,8 +1965,7 @@ function renderDaily() {
 
 function drawOracle() {
   const topic = oracleTopic.value || "wealth";
-  const prefix = currentLang === "zh" ? "今日提示：" : "Today's note: ";
-  oracleResult.textContent = `${prefix}${buildDailyReading(topic, "oracle")}`;
+  oracleResult.textContent = buildOraclePrompt(topic);
 }
 
 function renderQin() {
