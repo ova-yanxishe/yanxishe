@@ -10,7 +10,7 @@
   <title>东方颜习社｜东方专属画像</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./enso_circle_print_thin.png" />
-  <link rel="stylesheet" href="./styles.css?v=20260630-officer5" />
+  <link rel="stylesheet" href="./styles.css?v=20260630-officer6" />
 </head>
 <body>
   <main class="shell">
@@ -98,12 +98,15 @@
           <em data-i18n="studyCardHint">ORIENTAL VITAL AESTHETICS · DAILY CARD</em>
         </article>
         <article class="daily-test-card">
-          <span data-i18n="testLabel">每日测试</span>
+          <span data-i18n="testLabel">每日一签</span>
           <h3 data-i18n="testTitle">今日想先看哪一签？</h3>
           <p class="test-quiet-note" data-i18n="testQuietNote">抽签前，先深呼吸三次，让心安静下来。心头无事不起念，起念再看今日提示。</p>
           <div class="daily-test-options">
             <button type="button" data-test="love" data-i18n="testLove">感情签</button>
             <button type="button" data-test="wealth" data-i18n="testWealth">财气签</button>
+            <button type="button" data-test="career" data-i18n="testCareer">事业签</button>
+            <button type="button" data-test="beauty" data-i18n="testBeauty">气色签</button>
+            <button type="button" data-test="calm" data-i18n="testCalm">心神签</button>
             <button type="button" data-test="health" data-i18n="testHealth">身心签</button>
           </div>
           <p id="dailyTestResult"></p>
@@ -120,21 +123,6 @@
         <blockquote id="dailyArticleQuote"></blockquote>
         <p class="soft-consult-cta" id="dailyArticleCta"></p>
       </article>
-
-      <div class="oracle-box">
-        <label>
-          <span data-i18n="oracleQuestionLabel">今天想问什么？</span>
-          <select id="oracleTopic">
-            <option value="wealth" data-i18n="oracleWealth">财运与变现</option>
-            <option value="career" data-i18n="oracleCareer">事业与工作</option>
-            <option value="love" data-i18n="oracleLove">感情与关系</option>
-            <option value="beauty" data-i18n="oracleBeauty">气色与形象</option>
-            <option value="calm" data-i18n="oracleCalm">心态与选择</option>
-          </select>
-        </label>
-        <button id="oracleBtn" type="button" data-i18n="oracleBtn">抽取今日提示</button>
-        <p id="oracleResult" class="oracle-result" aria-live="polite"></p>
-      </div>
 
       <div class="almanac-query">
         <div class="query-copy">
@@ -459,7 +447,7 @@
     </section>
   </main>
 
-  <script src="./script.js?v=20260630-officer5"></script>
+  <script src="./script.js?v=20260630-officer6"></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {

@@ -291,11 +291,14 @@ const i18n = {
     ritualLabel: "今日旺自己",
     studyCardLabel: "五行气质学习卡",
     studyCardHint: "ORIENTAL VITAL AESTHETICS · DAILY CARD",
-    testLabel: "每日测试",
+    testLabel: "每日一签",
     testTitle: "今日想先看哪一签？",
     testQuietNote: "抽签前，先深呼吸三次，让心安静下来。心头无事不起念，起念再看今日提示。",
     testLove: "感情签",
     testWealth: "财气签",
+    testCareer: "事业签",
+    testBeauty: "气色签",
+    testCalm: "心神签",
     testHealth: "身心签",
     articleLabel: "今日养修短文",
     articleMeta: "每日自动更新，只留今日一篇。",
@@ -411,6 +414,9 @@ const i18n = {
     testQuietNote: "Before drawing, take three quiet breaths. Ask only when the heart has a real question.",
     testLove: "Love",
     testWealth: "Wealth",
+    testCareer: "Career",
+    testBeauty: "Presence",
+    testCalm: "Mind",
     testHealth: "Wellbeing",
     articleLabel: "Daily Cultivation Note",
     articleMeta: "Updates daily and only shows today's note.",
@@ -1383,6 +1389,48 @@ const officerTopicFrames = {
       kai: "财气适合公开展示、邀约咨询、发作品案例，让合适的人知道你能提供什么。",
       bi: "财气适合后台打磨，不急着卖，先把页面、话术和交付细节整理好。"
     },
+    career: {
+      jian: "事业适合立一个清楚的小方向，先做一件能被看见的作品或动作。",
+      chu: "事业适合清理低效安排，把消耗人的项目、话术和流程先减下来。",
+      man: "事业适合整理资源和人脉，但不要一口气承诺太多，留一点余地才稳。",
+      ping: "事业宜求平衡，适合复盘节奏、协调合作，把事情放回可执行的轨道。",
+      ding: "事业适合定规则、定报价、定交付时间，让专业感从秩序里长出来。",
+      zhi: "事业重在持续推进，把正在做的内容、客户或合作跟进到下一步。",
+      po: "事业适合拆掉旧模式，看清哪里低效，先止损再重新组织。",
+      wei: "事业宜谨慎，不急着接新承诺，先确认能力、时间和边界是否匹配。",
+      cheng: "事业适合交付、发布、面谈，把准备好的成果推到台前。",
+      shou: "事业适合收尾、复盘、整理作品集，把过去的积累变成可展示的资产。",
+      kai: "事业适合打开窗口，发作品、约合作、展示专业，让别人知道你能解决什么。",
+      bi: "事业适合闭门打磨，修脚本、修页面、修表达，暂时不必急着外放。"
+    },
+    beauty: {
+      jian: "气色适合从一个清爽的开始入手：发型、领口、站姿，先让自己有精神。",
+      chu: "气色适合做减法，少一点厚重颜色和复杂元素，让脸部更干净。",
+      man: "气色容易显满，穿搭宜松一点、柔一点，不要让颜色和饰品堆得太多。",
+      ping: "气色宜平衡，选择低饱和色和干净线条，会让整个人更安定。",
+      ding: "气色适合确定一个主色，不贪多，整体就会显得更高级。",
+      zhi: "气色重在维持，今天把睡眠、饮水、肩颈和妆发做稳，比临时修饰更有效。",
+      po: "气色适合打破疲惫感，换一个发型细节、领口或亮点，让状态从旧模式里出来。",
+      wei: "气色宜谨慎，少熬夜、少刺激，避免让脸部状态被情绪带走。",
+      cheng: "气色适合完整呈现，今天可以拍照、见人、发内容，让好状态被看见。",
+      shou: "气色适合收敛，淡妆、干净衣色、少说多稳，会显得更有气质。",
+      kai: "气色适合打开明亮感，用一点唇色、耳饰或浅色上装，让精神气出来。",
+      bi: "气色适合藏养，减少输出和比较，给皮肤、眼神和身体一点恢复时间。"
+    },
+    calm: {
+      jian: "心神适合立一个简单念头：今天只做好一件事，不把所有问题一次解决。",
+      chu: "心神适合清空杂念，删掉一个消耗源，心里会立刻轻一点。",
+      man: "心神容易装太满，少接收一点信息，给自己留出安静的位置。",
+      ping: "心神宜平，今天不和自己较劲，把节奏放慢一点，反而更清楚。",
+      ding: "心神适合定下来，写下一个决定、一个边界或一个今天必须完成的小事。",
+      zhi: "心神重在不散，把注意力收回手里的事，别让焦虑牵着走。",
+      po: "心神适合打破旧想法，不再反复证明自己，先从一个小行动重新开始。",
+      wei: "心神宜谨慎，情绪高的时候不做大决定，先喝水、走动、等一等。",
+      cheng: "心神适合完成闭环，把一件事做完，内在会自然安定。",
+      shou: "心神适合收回来，少解释、少比较、少外耗，让能量回到自己身上。",
+      kai: "心神适合打开一点，见一个舒服的人，做一件让自己有生命感的事。",
+      bi: "心神适合安静，不必回应所有声音，留白会帮你恢复判断力。"
+    },
     health: {
       jian: "身心适合重新建立一个小节律，先从早睡、喝水或肩颈放松开始。",
       chu: "身心适合减少负担，少冰冷、少熬夜、少信息噪音，让气色先干净起来。",
@@ -1891,10 +1939,10 @@ function buildDailyReading(topic, mode = "test") {
   const cta = buildReadingCta(topic, lang);
 
   if (lang === "zh") {
-    return `${officerBase}\n\n今日气象：${dayPillar}日，属${officerItem.grade}。${solarName}气中，宜顺势而行：${addon}\n\n${timeName}提示：${timeNote}\n\n${cta}`;
+    return `今日日签：${officerBase}\n\n今日气象：${dayPillar}日，属${officerItem.grade}。${solarName}气中，宜顺势而行：${addon}\n\n时辰提示：${timeName}，${timeNote}\n\n${cta}`;
   }
 
-  return `${officerBase}\n\nDaily note: ${dayPillar} day, ${officerItem.grade}. Under ${solarName}, move with the day: ${addon}\n\n${timeName} note: ${timeNote}\n\n${cta}`;
+  return `Daily reading: ${officerBase}\n\nDaily atmosphere: ${dayPillar} day, ${officerItem.grade}. Under ${solarName}, move with the day: ${addon}\n\nHour note: ${timeName}, ${timeNote}\n\n${cta}`;
 }
 
 function buildOraclePrompt(topic) {
@@ -1958,9 +2006,11 @@ function renderDaily() {
     ? `${verse.zh} —— ${verse.zhSource}`
     : `${verse.en} — ${verse.enSource}`;
   renderDailyRetention(element);
-  oracleResult.textContent = lang === "zh"
-    ? "选择一个主题，抽取今日提示。"
-    : "Choose a topic and draw today's note.";
+  if (oracleResult) {
+    oracleResult.textContent = lang === "zh"
+      ? "选择一个主题，抽取今日提示。"
+      : "Choose a topic and draw today's note.";
+  }
 }
 
 function drawOracle() {
@@ -2905,13 +2955,12 @@ filloutBtn.addEventListener("click", async () => {
   }
 });
 
-oracleBtn.addEventListener("click", drawOracle);
+if (oracleBtn) oracleBtn.addEventListener("click", drawOracle);
 qinMode.addEventListener("change", renderQin);
 document.querySelectorAll("[data-test]").forEach((button) => {
   button.addEventListener("click", () => {
     const key = button.dataset.test;
-    const prefix = currentLang === "zh" ? "今日签：" : "Today's reading: ";
-    dailyTestResult.textContent = `${prefix}${buildDailyReading(key, "test")}`;
+    dailyTestResult.textContent = buildDailyReading(key, "test");
   });
 });
 
