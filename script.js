@@ -270,9 +270,9 @@ const provincePlaces = Object.fromEntries([
 
 const i18n = {
   zh: {
-    heroTitle: "东方专属画像",
-    heroLead: "输入生辰，读懂自己的专属气质与色彩。这里会从五行气质、生活节律、面部气韵与日常养修方向，生成一份容易看懂的东方美学画像。这不是给你贴标签，而是陪你更温柔地认识自己。",
-    heroCta: "获取我的专属画像",
+    heroTitle: "我的气质画像",
+    heroLead: "输入生辰，看看自己的气质底色、适合的色彩、面部气韵和日常养修方向。它不是给你下定义，而是用一种温和的方式，陪你把自己看清楚一点。",
+    heroCta: "获取我的气质画像",
     priceLabel: "基础排盘",
     priceFree: "免费",
     priceSub: "先看一份自己的气质轮廓",
@@ -388,9 +388,9 @@ const i18n = {
     selectPlaceholder: "请选择"
   },
   en: {
-    heroTitle: "Your Eastern Portrait",
-    heroLead: "Enter your birth details to read your personal temperament and color direction. This page turns Five Element temperament, daily rhythm, facial presence and lifestyle cultivation into an easy-to-read Eastern aesthetic portrait.",
-    heroCta: "Get My Portrait",
+    heroTitle: "My Temperament Portrait",
+    heroLead: "Enter your birth details to see your temperament tone, suitable colors, facial presence and daily cultivation direction. It is not here to define you, but to help you understand yourself more gently.",
+    heroCta: "Get My Temperament Portrait",
     priceLabel: "Basic Chart",
     priceFree: "Free",
     priceSub: "Start with your temperament outline",
@@ -1974,7 +1974,7 @@ function renderQin() {
 
 function applyLanguage() {
   document.documentElement.lang = currentLang === "zh" ? "zh-CN" : "en";
-  document.title = currentLang === "zh" ? "东方颜习社｜东方专属画像" : "Oriental Vital Aesthetics | Personal Eastern Portrait";
+  document.title = currentLang === "zh" ? "东方颜习社｜我的气质画像" : "Oriental Vital Aesthetics | My Temperament Portrait";
   langToggle.textContent = currentLang === "zh" ? "EN" : "中";
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;

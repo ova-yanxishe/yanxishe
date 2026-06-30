@@ -7,10 +7,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="东方颜习社" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>东方颜习社｜东方专属画像</title>
+  <title>东方颜习社｜我的气质画像</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./enso_circle_print_thin.png" />
-  <link rel="stylesheet" href="./styles.css?v=20260630-restore2" />
+  <link rel="stylesheet" href="./styles.css?v=20260630-portrait-fix1" />
 </head>
 <body>
   <main class="shell">
@@ -23,9 +23,9 @@
         <p class="brand-title">東方顏習社</p>
         <p class="brand-subline">五行氣質 ・ 舒展駐顏 ・ 形體養修</p>
         <p class="eyebrow">ORIENTAL VITAL AESTHETICS</p>
-        <p class="portrait-line" data-i18n="heroTitle">东方专属画像</p>
-        <p class="lead" data-i18n="heroLead">输入生辰，读懂自己的专属气质与色彩。这里会从五行气质、生活节律、面部气韵与日常养修方向，生成一份容易看懂的东方美学画像。这不是给你贴标签，而是陪你更温柔地认识自己。</p>
-        <a class="hero-cta" href="#reportForm" data-i18n="heroCta">输入资料，生成免费画像</a>
+        <p class="portrait-line" data-i18n="heroTitle">我的气质画像</p>
+        <p class="lead" data-i18n="heroLead">输入生辰，看看自己的气质底色、适合的色彩、面部气韵和日常养修方向。它不是给你下定义，而是用一种温和的方式，陪你把自己看清楚一点。</p>
+        <a class="hero-cta" href="#reportForm" data-i18n="heroCta">获取我的气质画像</a>
       </div>
       <div class="price">
         <span data-i18n="priceLabel">基础排盘</span>
@@ -143,9 +143,9 @@
                 <span>年</span>
                 <input id="queryMonth" type="text" inputmode="numeric" maxlength="2" placeholder="06" value="06" />
                 <span>月</span>
-                <input id="queryDay" type="text" inputmode="numeric" maxlength="2" placeholder="21" value="21" />
+                <input id="queryDay" type="text" inputmode="numeric" maxlength="2" placeholder="30" value="30" />
                 <span>日</span>
-                <input id="queryDateInput" type="hidden" value="2026-06-21" />
+                <input id="queryDateInput" type="hidden" value="2026-06-30" />
               </div>
               <button class="field-action" id="queryDatePickBtn" type="button" data-i18n="datePickBtn">选择</button>
               <input class="native-date-picker" id="queryDatePicker" type="date" aria-label="选择查询日期" />
@@ -156,16 +156,16 @@
         <div class="query-result" id="queryResult" aria-live="polite">
           <div class="query-result-head">
             <div>
-              <span>2026年6月21日 周日</span>
-              <strong>丙寅日</strong>
+              <span>今日日期</span>
+              <strong>日课生成中</strong>
             </div>
             <em class="grade-pill grade-neutral">平日</em>
           </div>
           <div class="query-result-grid">
-            <p><b>值日</b><span>执日</span></p>
-            <p><b>节气</b><span>夏至 · 阳极转阴，宜降噪养心</span></p>
-            <p><b>宜</b><span>复盘、整理、跟进、修细节</span></p>
-            <p><b>忌</b><span>过度承诺、急于求成、硬碰硬</span></p>
+            <p><b>值日</b><span>正在读取今日节律</span></p>
+            <p><b>节气</b><span>正在读取节气</span></p>
+            <p><b>宜</b><span>稍后自动生成</span></p>
+            <p><b>忌</b><span>稍后自动生成</span></p>
           </div>
           <p class="query-note">日课用于观察一天的节律：先看日柱和值日，再决定今天适合推进、收束、整理还是休养。</p>
         </div>
@@ -506,7 +506,7 @@
     </section>
   </main>
 
-  <script src="./script.js?v=20260630-restore2"></script>
+  <script src="./script.js?v=20260630-portrait-fix1"></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
