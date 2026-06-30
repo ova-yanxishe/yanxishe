@@ -2875,11 +2875,11 @@ filloutBtn.addEventListener("click", async () => {
 });
 
 if (oracleBtn) oracleBtn.addEventListener("click", drawOracle);
-qinMode.addEventListener("change", renderQin);
+if (qinMode) qinMode.addEventListener("change", renderQin);
 document.querySelectorAll("[data-test]").forEach((button) => {
   button.addEventListener("click", () => {
     const key = button.dataset.test;
-    dailyTestResult.textContent = buildDailyReading(key, "test");
+    if (dailyTestResult) dailyTestResult.textContent = buildDailyReading(key, "test");
   });
 });
 

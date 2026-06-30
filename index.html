@@ -10,7 +10,7 @@
   <title>东方颜习社｜东方专属画像</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./enso_circle_print_thin.png" />
-  <link rel="stylesheet" href="./styles.css?v=20260630-vital1" />
+  <link rel="stylesheet" href="./styles.css?v=20260630-restore1" />
 </head>
 <body>
   <main class="shell">
@@ -81,20 +81,24 @@
       <div class="daily-retention-grid">
         <article class="ritual-card">
           <span data-i18n="ritualLabel">今日旺自己</span>
-          <h3 id="dailyRitualTitle"></h3>
-          <p id="dailyRitualText"></p>
-          <small id="dailyRitualTip"></small>
+          <h3 id="dailyRitualTitle">先舒展，再行动</h3>
+          <p id="dailyRitualText">今天先让肩颈和眉心松开，再开始做重要的事。人的状态顺了，气色和行动才会自然接上。</p>
+          <small id="dailyRitualTip">小动作：抬头、展肩、深呼吸 5 次，再整理一处桌面。</small>
         </article>
         <article class="study-card screenshot-card">
           <span data-i18n="studyCardLabel">五行气质学习卡</span>
           <div class="study-card-head">
-            <i id="studyCardElement"></i>
+            <i id="studyCardElement" class="element-wood">木</i>
             <div>
-              <h3 id="studyCardTitle"></h3>
-              <p id="studyCardText"></p>
+              <h3 id="studyCardTitle">木气：清秀、舒展、生长感</h3>
+              <p id="studyCardText">木不是只穿绿色，而是让线条有呼吸，让人看见生命力。</p>
             </div>
           </div>
-          <ul id="studyCardList"></ul>
+          <ul id="studyCardList">
+            <li>适合：垂顺外套、自然腰线、植物感配饰</li>
+            <li>避免：厚重压身、长期憋闷、肩颈紧绷</li>
+            <li>今日关键词：舒展</li>
+          </ul>
           <em data-i18n="studyCardHint">ORIENTAL VITAL AESTHETICS · DAILY CARD</em>
         </article>
         <article class="daily-test-card">
@@ -109,7 +113,7 @@
             <button type="button" data-test="calm" data-i18n="testCalm">心神</button>
             <button type="button" data-test="health" data-i18n="testHealth">身心</button>
           </div>
-          <p id="dailyTestResult"></p>
+          <p id="dailyTestResult">先深呼吸，让心安静下来。选择一个主题，看今天适合如何安顿自己、整理气色与行动。</p>
         </article>
       </div>
 
@@ -118,10 +122,10 @@
           <span data-i18n="articleLabel">今日养修短文</span>
           <em data-i18n="articleMeta">每日自动更新，只留今日一篇。</em>
         </div>
-        <h3 id="dailyArticleTitle"></h3>
-        <p id="dailyArticleText"></p>
-        <blockquote id="dailyArticleQuote"></blockquote>
-        <p class="soft-consult-cta" id="dailyArticleCta"></p>
+        <h3 id="dailyArticleTitle">把美感先放回生活里</h3>
+        <p id="dailyArticleText">真正能让人变好看的，不只是某一个技巧，而是每天把睡眠、饮食、衣着、姿态和心绪慢慢归位。先让自己不再慌乱，美感才有地方生长。</p>
+        <blockquote id="dailyArticleQuote">致虚极，守静笃。 —— 《道德经》</blockquote>
+        <p class="soft-consult-cta" id="dailyArticleCta">如果你感觉这段文字贴近自己的状态，可以先保存页面；想把气质、色彩、体态和近期状态整理得更清楚，可添加颜习社微信 OVA_Yanxishe。</p>
       </article>
 
       <div class="almanac-query">
@@ -174,8 +178,35 @@
 
       <div class="qin-layout">
         <div>
-          <p id="qinResult" class="qin-result"></p>
-          <div id="qinTrackList" class="qin-track-list"></div>
+          <p id="qinResult" class="qin-result">适合睡前听慢一点、留白多一点的古琴曲。音量放低，不追求听懂，只让呼吸慢下来。</p>
+          <div id="qinTrackList" class="qin-track-list">
+            <article class="qin-track">
+              <div>
+                <span>羽</span>
+                <strong>平沙落雁</strong>
+                <em>属水，宜沉静、入眠</em>
+              </div>
+              <p>适合睡前放松、收束杂念，让一天的心绪慢慢落下来。</p>
+              <small class="qin-audio-note">建议选择古琴原曲或专业演奏版本，音量放低，静听即可。</small>
+              <nav>
+                <a href="https://search.bilibili.com/all?keyword=%E5%8F%A4%E7%90%B4%20%E5%B9%B3%E6%B2%99%E8%90%BD%E9%9B%81" target="_blank" rel="noopener">去试听</a>
+                <a href="https://music.163.com/#/search/m/?s=%E5%8F%A4%E7%90%B4%20%E5%B9%B3%E6%B2%99%E8%90%BD%E9%9B%81" target="_blank" rel="noopener">平台搜索</a>
+              </nav>
+            </article>
+            <article class="qin-track">
+              <div>
+                <span>宫</span>
+                <strong>良宵引</strong>
+                <em>属土，宜安定、归中</em>
+              </div>
+              <p>适合晚间整理情绪、放慢节奏，让身体和心神回到比较安稳的位置。</p>
+              <small class="qin-audio-note">建议选择古琴原曲或专业演奏版本，音量放低，静听即可。</small>
+              <nav>
+                <a href="https://search.bilibili.com/all?keyword=%E5%8F%A4%E7%90%B4%20%E8%89%AF%E5%AE%B5%E5%BC%95" target="_blank" rel="noopener">去试听</a>
+                <a href="https://music.163.com/#/search/m/?s=%E5%8F%A4%E7%90%B4%20%E8%89%AF%E5%AE%B5%E5%BC%95" target="_blank" rel="noopener">平台搜索</a>
+              </nav>
+            </article>
+          </div>
         </div>
         <div class="qin-tone-map">
           <strong data-i18n="qinToneTitle">五音入五脏</strong>
@@ -447,7 +478,7 @@
     </section>
   </main>
 
-  <script src="./script.js?v=20260630-vital1"></script>
+  <script src="./script.js?v=20260630-restore1"></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
