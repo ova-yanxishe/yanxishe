@@ -10,7 +10,7 @@
   <title>东方颜习社｜东方气韵</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./enso_circle_print_thin.png" />
-  <link rel="stylesheet" href="./styles.css?v=20260630-qiyun-button2" />
+  <link rel="stylesheet" href="./styles.css?v=20260701-auto-day1" />
 </head>
 <body>
   <main class="shell">
@@ -141,13 +141,13 @@
             <span data-i18n="queryDateLabel">查询日期</span>
             <div class="input-with-action query-date-control">
               <div class="date-parts query-date-parts" aria-label="查询日期">
-                <input id="queryYear" type="text" inputmode="numeric" maxlength="4" placeholder="2026" value="2026" />
+                <input id="queryYear" type="text" inputmode="numeric" maxlength="4" placeholder="2026" />
                 <span>年</span>
-                <input id="queryMonth" type="text" inputmode="numeric" maxlength="2" placeholder="06" value="06" />
+                <input id="queryMonth" type="text" inputmode="numeric" maxlength="2" placeholder="07" />
                 <span>月</span>
-                <input id="queryDay" type="text" inputmode="numeric" maxlength="2" placeholder="30" value="30" />
+                <input id="queryDay" type="text" inputmode="numeric" maxlength="2" placeholder="01" />
                 <span>日</span>
-                <input id="queryDateInput" type="hidden" value="2026-06-30" />
+                <input id="queryDateInput" type="hidden" />
               </div>
               <button class="field-action" id="queryDatePickBtn" type="button" data-i18n="datePickBtn">选择</button>
               <input class="native-date-picker" id="queryDatePicker" type="date" aria-label="选择查询日期" />
@@ -158,18 +158,18 @@
         <div class="query-result" id="queryResult" aria-live="polite">
           <div class="query-result-head">
             <div>
-              <span>2026年6月30日 周二</span>
-              <strong>乙亥日</strong>
+              <span>打开页面后自动读取今日</span>
+              <strong>今日日课</strong>
             </div>
-            <em class="grade-pill grade-good">吉日</em>
+            <em class="grade-pill grade-neutral">自动更新</em>
           </div>
           <div class="query-result-grid">
-            <p><b>值日</b><span>定日</span></p>
-            <p><b>节气</b><span>夏至 · 距小暑约7天</span></p>
-            <p><b>宜</b><span>定方案、约见、签小事、安顿生活</span></p>
-            <p><b>忌</b><span>频繁改口、临时变卦</span></p>
+            <p><b>值日</b><span>将按当天自动生成</span></p>
+            <p><b>节气</b><span>将按当天自动生成</span></p>
+            <p><b>宜</b><span>将按当天自动生成</span></p>
+            <p><b>忌</b><span>将按当天自动生成</span></p>
           </div>
-          <p class="query-note">定日适合让事情落位，气质上重稳重与秩序。日课用于观察一天的节律：先看日柱和值日，再决定今天适合推进、收束、整理还是休养。</p>
+          <p class="query-note">日课用于观察一天的节律：先看日柱和值日，再决定今天适合推进、收束、整理还是休养。</p>
         </div>
       </div>
     </section>
@@ -508,7 +508,7 @@
     </section>
   </main>
 
-  <script src="./script.js?v=20260630-qiyun-button2"></script>
+  <script src="./script.js?v=20260701-auto-day1"></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {

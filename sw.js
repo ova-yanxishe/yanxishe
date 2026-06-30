@@ -1,9 +1,9 @@
-const CACHE_NAME = "ova-yanxishe-pwa-v20260630-qiyun-button2";
+const CACHE_NAME = "ova-yanxishe-pwa-v20260701-auto-day1";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260630-qiyun-button2",
-  "./script.js?v=20260630-qiyun-button2",
+  "./styles.css?v=20260701-auto-day1",
+  "./script.js?v=20260701-auto-day1",
   "./manifest.webmanifest",
   "./enso_circle_print_thin.png",
   "./oriental_woman_bg.jpg"

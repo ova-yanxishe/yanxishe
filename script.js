@@ -1768,7 +1768,8 @@ function getTwelveOfficer(date) {
 function renderAlmanacQuery(rawValue) {
   if (!queryResult) return;
   try {
-    const normalized = normalizeCalendarDate(rawValue || getQueryDateValue() || formatDateValue(new Date()));
+    const sourceValue = rawValue === undefined ? formatDateValue(new Date()) : rawValue || getQueryDateValue() || formatDateValue(new Date());
+    const normalized = normalizeCalendarDate(sourceValue);
     if (!normalized) {
       queryResult.innerHTML = `<p class="query-hint">${currentLang === "zh" ? "请完整填写年月日，例如 2026 年 06 月 21 日。" : "Please complete year, month and day, e.g. 2026 / 06 / 21."}</p>`;
       return;
@@ -2827,14 +2828,14 @@ queryDatePicker.addEventListener("change", () => {
 });
 
 queryAlmanacBtn.addEventListener("click", () => {
-  renderAlmanacQuery();
+  renderAlmanacQuery(getQueryDateValue());
 });
 
 queryDateParts.forEach((input) => {
   input.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      renderAlmanacQuery();
+      renderAlmanacQuery(getQueryDateValue());
     }
   });
 });
