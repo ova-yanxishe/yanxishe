@@ -382,9 +382,11 @@ const i18n = {
     usageTitle: "正式使用方式",
     betaTag: "内测版",
     freeTier: "免费",
-    freeDesc: "填写生辰资料后，即时生成四柱排盘、气质底色、五行比例、穿衣色系与日常养护提示。",
-    tier29: "人工生成详细文字报告：在基础画像之上，细看气色体态、脸部状态、五行穿搭与日常养修方向。",
-    tier199: "人工详细报告 + 40分钟一对一专属解读：结合你的当下状态，梳理气质定位、形象表达与后续养修路径。",
+    freeDesc: "先免费生成基础画像：看到四柱排盘、气质底色、五行比例、穿衣色系与日常养生提示。它能让你先看见轮廓，但还不能替你判断真正该先调整哪里。",
+    tier29: "在免费基础上，由人工整理详细专属个人档案：把你的个人喜忌、注意事项、专属旺运 tips、适合的日常调理方法与形象养修方向整理清楚。适合想知道“我到底该怎么调整”的人。",
+    tier199: "在前两项基础上，包含一次 40 分钟一对一在线咨询专属解读：当面把你的气质定位、形象表达、养修重点与下一步行动讲清楚，避免看完报告还是不知道怎么做。",
+    usageValue: "如果你发现自己的气色、体态、穿搭和状态总是“哪里不对但说不清”，建议至少做一次人工档案或在线解读。后续可按个人情况衔接线下传统道家驻颜推拿服务、正规模特形体训练与走秀指导，以及运动康复和体态管理老师支持。相关服务均以生活方式、形象管理和非医疗养修为主。",
+    usageContact: "想确认自己适合哪一档，可添加颜习社微信 OVA_Yanxishe，发送出生资料和当前最想调整的问题，详询人工。",
     selectPlaceholder: "请选择"
   },
   en: {
@@ -500,9 +502,11 @@ const i18n = {
     usageTitle: "How It Works",
     betaTag: "Beta",
     freeTier: "Free",
-    freeDesc: "Generate a basic portrait online: four pillars, luck cycle, annual flow, Day Master temperament, Five Element profile, color direction and daily care notes.",
-    tier29: "Detailed written report by a person: complexion, posture, facial state, Five Element styling and daily cultivation direction.",
-    tier199: "Detailed report + 40-minute one-on-one reading: connect your current state with temperament, image expression and next-step cultivation.",
+    freeDesc: "Start with a free basic portrait: four pillars, temperament tone, Five Element ratio, color direction and daily wellness notes. It shows the outline, but it cannot decide what you should adjust first.",
+    tier29: "Built on the free portrait, a detailed personal file prepared by hand: personal likes and cautions, key notes, supportive daily tips, suitable care methods and image-cultivation direction. For people who want to know what to adjust next.",
+    tier199: "Includes the first two items plus one 40-minute one-on-one online reading: clarify your temperament positioning, image expression, cultivation focus and next actions, so the report becomes usable.",
+    usageValue: "If your complexion, posture, styling or daily state often feels 'not quite right' but hard to explain, a personal file or online reading can help clarify the next step. Depending on the individual situation, follow-up may connect with traditional Daoist facial-care massage, formal model posture/runway training, and support from sports rehabilitation and posture-management teachers. Services are lifestyle, image-management and non-medical cultivation references.",
+    usageContact: "To confirm which option fits you, add Yanxishe on WeChat OVA_Yanxishe and send your birth details plus the issue you most want to adjust. Manual consultation available.",
     selectPlaceholder: "Select"
   }
 };
