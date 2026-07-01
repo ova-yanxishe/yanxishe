@@ -271,15 +271,15 @@ const provincePlaces = Object.fromEntries([
 const i18n = {
   zh: {
     heroTitle: "东方气韵",
-    heroLead: "输入生辰，看看自己的气质底色、适合的色彩、面部气韵和日常养修方向。它不是给你下定义，而是用一种温和的方式，陪你把自己看清楚一点。",
+    heroLead: "输入生辰，看看自己的气质底色、适合色彩、面部气韵与日常养修方向。这里不是给你贴标签，而是用一种温和的方式，陪你把自己的状态看清楚一点。",
     heroCta: "获取我的气质画像",
     priceLabel: "基础排盘",
     priceFree: "免费",
     priceSub: "先看一份自己的气质轮廓",
-    notice: "本页用于传统文化兴趣测试和生活方式参考，不提供医疗诊断、疾病预测、治疗承诺或容貌评价。如有身体不适，请优先咨询正规医疗机构。",
+    notice: "本页用于传统文化兴趣测试与生活方式参考，不提供医疗诊断、疾病预测、治疗承诺或容貌评价。如有身体不适，请优先咨询正规医疗机构。",
     dailySeal: "今日小课",
-    dailyTitle: "每日一卦与今日气象",
-    dailyLead: "每天用一分钟，看今日宜忌、穿搭色与一个小提醒。它不替你决定人生，只帮你把心慢慢收回来。",
+    dailyTitle: "今日气象与生活小课",
+    dailyLead: "每天用一分钟，看看今日节律、穿搭色和一个能马上做到的小行动。它不是预测命运，而是帮你把注意力收回到当下。",
     poemLabel: "今日文句",
     dailyHexLabel: "今日卦象",
     dailyAlmanacLabel: "黄历参考",
@@ -292,8 +292,8 @@ const i18n = {
     studyCardLabel: "五行气质学习卡",
     studyCardHint: "ORIENTAL VITAL AESTHETICS · DAILY CARD",
     testLabel: "今日气韵",
-    testTitle: "今天想先照见哪一面？",
-    testQuietNote: "开始前，先深呼吸三次。让心安静一点，再看今日给你的气韵提醒。",
+    testTitle: "今天想先看见哪一面？",
+    testQuietNote: "开始前，先深呼吸三次。让心安静下来，再看今日给你的气韵提醒。",
     testLove: "感情",
     testWealth: "财气",
     testCareer: "事业",
@@ -311,7 +311,7 @@ const i18n = {
     oracleBtn: "抽取今日提示",
     qinSeal: "琴音静养",
     qinTitle: "古琴五音与身心安顿",
-    qinLead: "五音入五脏，是传统文化里理解声音、情绪与身体节律的一种方式。这里不做医疗承诺，只提供几首适合静心、睡前放松与整理情绪的古琴曲目。",
+    qinLead: "五音入五脏，是传统文化里理解声音、情绪与身体节律的一种方式。这里不做医疗承诺，只提供适合静心、睡前放松与整理情绪的古琴曲目参考。",
     qinModeLabel: "我现在想要",
     qinModeSleep: "睡前放松",
     qinModeCalm: "静心安神",
@@ -330,7 +330,7 @@ const i18n = {
     qinOriginalAudio: "建议选择古琴原曲或专业演奏版本，音量放低，静听即可。",
     querySeal: "日课日历",
     queryTitle: "查询过去与未来的日子",
-    queryLead: "输入或选择日期，查看当日的日柱、节气、十二值日与吉平慎分类。结果用于生活节律参考，不替代个人择日。",
+    queryLead: "输入或选择日期，查看当日的日柱、节气、十二值日与吉平慎分类。结果用于理解生活节律，不替代正式择日。",
     queryDateLabel: "查询日期",
     queryBtn: "查询日课",
     formTitle: "你的生辰资料",
@@ -349,20 +349,20 @@ const i18n = {
     birthCityCountyLabel: "城市 / 县区 / 海外城市",
     provincePlaceholder: "请选择省份、地区或海外分区",
     cityCountyPlaceholder: "先选择上一级地区",
-    cityCountyHint: "选中后会自动填入出生地点、经度与时区；若县城或海外小城市不在列表，可手动填写地点和经度。",
+    cityCountyHint: "选中后会自动填入出生地点、经度与时区。若县城或海外小城市不在列表，可手动填写地点和经度。",
     birthPlacePresetLabel: "快速校准",
     placePresetManual: "手动填写 / 不在列表",
     longitudeLabel: "出生地经度",
-    longitudeHint: "县城、乡镇或海外出生，建议用地图查询经度填写；东经为正，西经为负。",
+    longitudeHint: "如果出生在县城、乡镇或海外城市，建议用地图查询经度后填写；东经为正，西经为负。",
     trueSolarLabel: "真太阳时校准",
     trueSolarAuto: "按经度自动校准",
     trueSolarOff: "暂不校准，按钟表时间",
     ziRuleLabel: "子时换日规则",
     ziStartRule: "子初换日：23:00 起算次日",
     midnightRule: "子正换日：00:00 起算次日",
-    ziRuleHint: "23点前后出生的人建议特别确认；系统会在报告中显示校准说明。",
+    ziRuleHint: "如果出生在 23 点前后，建议特别确认；系统会在报告中显示校准说明。",
     timezoneLabel: "出生地时区",
-    timezoneHint: "海外出生请填写当地出生时间，并选择出生地时区。真太阳时会结合经度修正。",
+    timezoneHint: "海外出生请填写当地出生时间，并选择出生地时区。若后续做完整梳理，会进一步复核节气、时区与出生地误差。",
     tzChina: "UTC+08:00 中国/新加坡/台北/香港",
     tzJapan: "UTC+09:00 日本/韩国",
     tzUnknown: "不确定，先按当地出生时间",
@@ -374,7 +374,7 @@ const i18n = {
     needPosture: "体态、肩颈、下颌紧张",
     needLife: "事业关系与近期状态",
     stateLabel: "最近最明显的状态",
-    agreeText: "我理解本测试仅作传统文化和生活方式参考，不替代医疗、心理或法律建议。",
+    agreeText: "我理解本测试仅作传统文化与生活方式参考，不替代医疗、心理或法律建议。",
     previewBtn: "生成我的画像",
     submitBtn: "复制资料",
     emptyTitle: "填写后生成你的画像",
@@ -382,10 +382,10 @@ const i18n = {
     usageTitle: "正式使用方式",
     betaTag: "内测版",
     freeTier: "免费",
-    freeDesc: "先免费生成基础画像：看到四柱排盘、气质底色、五行比例、穿衣色系与日常养生提示。它能让你先看见轮廓，但还不能替你判断真正该先调整哪里。",
-    tier29: "在免费基础上，由人工整理详细专属个人档案：把你的个人喜忌、注意事项、专属旺运 tips、适合的日常调理方法与形象养修方向整理清楚。适合想知道“我到底该怎么调整”的人。",
-    tier199: "在前两项基础上，包含一次 40 分钟一对一在线咨询专属解读：当面把你的气质定位、形象表达、养修重点与下一步行动讲清楚，避免看完报告还是不知道怎么做。",
-    usageValue: "如果你发现自己的气色、体态、穿搭和状态总是“哪里不对但说不清”，建议至少做一次人工档案或在线解读。后续可按个人情况衔接线下传统道家驻颜推拿服务、正规模特形体训练与走秀指导，以及运动康复和体态管理老师支持。相关服务均以生活方式、形象管理和非医疗养修为主。",
+    freeDesc: "先免费生成基础画像：查看四柱排盘、气质底色、五行比例、穿衣色系与日常养生提示。它适合先看清轮廓，但还不能替你判断真正该先调整哪里。",
+    tier29: "在免费基础上，由人工整理详细专属个人档案：把你的个人喜忌、注意事项、专属旺运 tips、日常调理方法与形象养修方向梳理清楚。适合想知道“我到底该从哪里调整”的人。",
+    tier199: "在前两项基础上，包含一次 40 分钟一对一在线专属解读：把你的气质定位、形象表达、养修重点与下一步行动讲清楚，避免看完报告后仍然不知道怎么做。",
+    usageValue: "如果你发现自己的气色、体态、穿搭和整体状态总是“哪里不对，但又说不清”，可以先从人工档案或在线解读开始。后续可按个人情况，衔接线下传统道家驻颜推拿、正规模特形体训练与走秀指导，以及运动康复和体态管理老师支持。相关服务均以生活方式、形象管理和非医疗养修为主。",
     usageContact: "想确认自己适合哪一档，可添加颜习社微信 OVA_Yanxishe，发送出生资料和当前最想调整的问题，详询人工。",
     selectPlaceholder: "请选择"
   },
@@ -1022,18 +1022,18 @@ const dailyRituals = {
 
 const studyCards = {
   zh: {
-    wood: { title: "木气：清秀、舒展、生长感", text: "木不是只穿绿色，而是让线条有呼吸，让人看见生命力。", list: ["适合：垂顺外套、自然腰线、植物感配饰", "避免：厚重压身、长期憋闷、肩颈紧绷", "今日关键词：舒展"] },
-    fire: { title: "火气：明亮、精神、被看见", text: "火不是越红越好，而是把精神焦点放在最该出现的位置。", list: ["适合：一点唇色、暖色焦点、利落表达", "避免：全身高饱和、熬夜上火、情绪过急", "今日关键词：有光"] },
-    earth: { title: "土气：稳定、温润、承托感", text: "土的美来自可靠和松弛，不是把责任全扛在身上。", list: ["适合：米杏、卡其、针织、低饱和暖色", "避免：过甜过冰、空间杂乱、拖延堆积", "今日关键词：安定"] },
-    metal: { title: "金气：清爽、边界、高级感", text: "金的美在取舍，少一点杂乱，多一点干净的轮廓。", list: ["适合：白、银灰、衬衫、西装、简洁首饰", "避免：元素太多、过度挑剔、呼吸太浅", "今日关键词：精简"] },
-    water: { title: "水气：沉静、灵气、层次感", text: "水的美不是阴郁，而是有留白、有深度、有恢复力。", list: ["适合：墨色、藏蓝、柔软垂坠、睡前静养", "避免：信息过载、全身太暗太松、长期硬撑", "今日关键词：养神"] }
+    wood: { title: "木气：清秀、舒展、生长感", text: "木不是只穿绿色，而是让线条有呼吸，让人看见生命力。", list: ["今日主气：木气，宜舒展、生发、打开线条", "今日适合色：绿色、青色、浅绿、植物感配饰", "今日避开色：过重的黑灰、压身厚色、沉闷大面积深色", "气质关键词：舒展", "穿搭建议：垂顺外套、自然腰线、轻薄层次会更显精神", "养修小动作：抬头展肩，深呼吸 5 次，再整理一处桌面"] },
+    fire: { title: "火气：明亮、精神、被看见", text: "火不是越红越好，而是把精神焦点放在最该出现的位置。", list: ["今日主气：火气，宜明朗、表达、提升可见度", "今日适合色：暖红、珊瑚、柔粉、少量亮色点缀", "今日避开色：全身高饱和、强烈撞色、过燥的红紫", "气质关键词：有光", "穿搭建议：只保留一个亮点，比如唇色、耳饰、领口或上衣焦点", "养修小动作：照镜子放松眉心，把今天最重要的一句话说清楚"] },
+    earth: { title: "土气：稳定、温润、承托感", text: "土的美来自可靠和松弛，不是把责任全扛在身上。", list: ["今日主气：土气，宜稳定、归中、建立秩序", "今日适合色：米杏、卡其、咖啡、低饱和暖黄色", "今日避开色：过甜过腻的亮黄、显脏的灰褐、厚重堆叠", "气质关键词：安定", "穿搭建议：针织、棉麻和低饱和暖色更能托住气场", "养修小动作：按时吃一顿热饭，完成一个拖着的小闭环"] },
+    metal: { title: "金气：清爽、边界、高级感", text: "金的美在取舍，少一点杂乱，多一点干净的轮廓。", list: ["今日主气：金气，宜清理、取舍、建立边界", "今日适合色：白色、乳白、银灰、浅金、干净中性色", "今日避开色：杂乱花色、廉价亮片、过多装饰叠加", "气质关键词：精简", "穿搭建议：衬衫、西装、直线条和简洁首饰会更显贵", "养修小动作：删掉一个无效承诺，让呼吸变深一点"] },
+    water: { title: "水气：沉静、灵气、层次感", text: "水的美不是阴郁，而是有留白、有深度、有恢复力。", list: ["今日主气：水气，宜沉静、蓄养、恢复精神", "今日适合色：墨色、藏蓝、深灰、微光泽或柔软垂坠材质", "今日避开色：全身过暗过松、显疲惫的浑浊色、冷硬大面积黑色", "气质关键词：养神", "穿搭建议：深色里留一点浅色呼吸位，气质会更清透", "养修小动作：睡前少刷屏 20 分钟，喝温水，听一段慢音"] }
   },
   en: {
-    wood: { title: "Wood: fresh, open, growing", text: "Wood is not just green; it is breathable lines and visible vitality.", list: ["Use: fluid jackets, natural waistlines, botanical accents", "Avoid: heavy pressure, suppression, tight neck and shoulders", "Keyword: openness"] },
-    fire: { title: "Fire: bright, vivid, seen", text: "Fire is not more red; it is placing spirit where it can be seen.", list: ["Use: lip color, warm focal points, clear speech", "Avoid: full saturation, late nights, rushed emotions", "Keyword: light"] },
-    earth: { title: "Earth: steady, warm, supportive", text: "Earth beauty comes from relaxed reliability, not carrying everything alone.", list: ["Use: beige, khaki, knit, muted warm tones", "Avoid: iced sweets, clutter, unfinished piles", "Keyword: steadiness"] },
-    metal: { title: "Metal: clean, bounded, refined", text: "Metal beauty comes from selection: fewer elements, clearer contours.", list: ["Use: white, silver grey, shirts, suits, simple jewelry", "Avoid: clutter, over-criticism, shallow breathing", "Keyword: refinement"] },
-    water: { title: "Water: quiet, subtle, layered", text: "Water beauty is not gloom; it is space, depth and recovery.", list: ["Use: ink, navy, soft drape, pre-sleep quiet", "Avoid: overload, too dark and loose, constant forcing", "Keyword: restoration"] }
+    wood: { title: "Wood: fresh, open, growing", text: "Wood is not just green; it is breathable lines and visible vitality.", list: ["Main Qi: Wood, open the line and allow growth", "Supportive Colors: green, cyan, light green, botanical accents", "Avoid: heavy black-grey, pressing dark colors, dense layers", "Keyword: openness", "Styling: fluid jackets, natural waistlines and light layers", "Practice: lift the head, open the shoulders, breathe five times"] },
+    fire: { title: "Fire: bright, vivid, seen", text: "Fire is not more red; it is placing spirit where it can be seen.", list: ["Main Qi: Fire, brighten expression and visibility", "Supportive Colors: soft red, coral, warm pink, one bright accent", "Avoid: full saturation, loud contrast, overly hot red-purple", "Keyword: light", "Styling: keep one focal point in lips, earrings, collar or top", "Practice: soften the brow and say the most important sentence clearly"] },
+    earth: { title: "Earth: steady, warm, supportive", text: "Earth beauty comes from relaxed reliability, not carrying everything alone.", list: ["Main Qi: Earth, return to steadiness and rhythm", "Supportive Colors: beige, khaki, coffee, muted warm yellow", "Avoid: overly sweet yellow, muddy grey-brown, heavy piling", "Keyword: steadiness", "Styling: knit, cotton-linen and muted warm tones support the field", "Practice: eat something warm on time and close one small loop"] },
+    metal: { title: "Metal: clean, bounded, refined", text: "Metal beauty comes from selection: fewer elements, clearer contours.", list: ["Main Qi: Metal, clarify, edit and set boundaries", "Supportive Colors: white, ivory, silver grey, pale gold, clean neutrals", "Avoid: cluttered prints, cheap shine, too many accessories", "Keyword: refinement", "Styling: shirts, suits, straight lines and simple jewelry", "Practice: remove one low-value commitment and deepen the breath"] },
+    water: { title: "Water: quiet, subtle, layered", text: "Water beauty is not gloom; it is space, depth and recovery.", list: ["Main Qi: Water, restore spirit and leave space", "Supportive Colors: ink, navy, deep grey, soft drape or subtle sheen", "Avoid: too dark and loose, muddy colors, hard black blocks", "Keyword: restoration", "Styling: leave a light breathing space within deeper tones", "Practice: stop scrolling 20 minutes before sleep and listen slowly"] }
   }
 };
 
@@ -1845,7 +1845,7 @@ function renderDailyRetention(element) {
   if (dailyArticleCta) dailyArticleCta.textContent = cta;
   if (dailyTestResult) {
     dailyTestResult.textContent = lang === "zh"
-      ? "先深呼吸，让心安静下来。选择一个主题，看今天适合如何安顿自己、整理气色与行动。"
+      ? "先深呼吸，让心安静下来。选择一个主题，看看今天适合如何照顾自己、整理气色与行动。"
       : "Take a quiet breath first. If the heart has a real question, draw today's note.";
   }
 }

@@ -653,7 +653,7 @@ h3 {
 
 .study-card ul {
   display: grid;
-  gap: 6px;
+  gap: 8px;
   margin: 12px 0 0;
   padding: 0;
   list-style: none;
@@ -661,8 +661,8 @@ h3 {
 
 .study-card li {
   color: #5a5146;
-  font-size: 14px;
-  line-height: 1.68;
+  font-size: 13.5px;
+  line-height: 1.62;
 }
 
 .study-card li::before {
